@@ -4,7 +4,8 @@ Synthetize training and test data for optical fiber pattern removal project.
 
 ## Getting Started
 
-Start with maskData.py. The other files are util functions.
+Start with maskData.py. Change the path to your image directory.
+The other files are util functions.
 
 ### Prerequisites
 
