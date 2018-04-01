@@ -29,6 +29,7 @@ for file_name in os.listdir(image_path):
         gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         size_x, size_y = gray_img.shape
         img_mask = generateHoneycombMask([size_x, size_y], hexagon_size, white_ratio, pattern_shift, rotation_angle, gray_img.dtype)
-        gray_img_masked = cv2.multiply(img_mask, gray_img)
+        blur_img = cv2.blur(gray_img, (2*hexagon_size,2*hexagon_size))
+        gray_img_masked = cv2.multiply(img_mask, blur_img)
         cv2.imwrite(image_path + file_name[:-len(suffix)]+'masked' + suffix, gray_img_masked)
 
